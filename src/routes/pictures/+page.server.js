@@ -1,10 +1,15 @@
-import fs from "fs/promises";
+import fs from "fs";
 import path from "path";
 import { redirect } from "@sveltejs/kit";
 
 export async function load() {
   let dir = path.join(process.cwd(), "images");
-  let imgs = await fs.readdir("./images");
+
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
+
+  let imgs = await fs.readdirSync("./images");
   imgs = imgs.map((img) => {
     console.log(imgs);
   });
