@@ -3,11 +3,11 @@
 </script>
 
 {#each data.imgs as img}
-  <img src={`./images/${img}`} />
+  <img src={`./images/${img}`} alt={img} />
   <!-- <p>{img}</p> -->
 {/each}
 
-<form action="?/avatar" method="post" enctype="multipart/form-data">
-  <input type="file" name="avatar" placeholder="avatar" />
+<form action="?/avatar" method="POST">
+  <input type="file" name="avatar" />
   <button type="submit">upload</button>
 </form>
