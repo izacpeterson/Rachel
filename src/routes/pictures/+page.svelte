@@ -3,8 +3,8 @@
 </script>
 
 {#each data.imgs as img}
-  <img src={img} />
-  <p>{img}</p>
+  <img src={`./images/${img}`} />
+  <!-- <p>{img}</p> -->
 {/each}
 
 <form action="?/avatar" method="post" enctype="multipart/form-data">
