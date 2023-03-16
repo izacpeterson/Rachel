@@ -1,18 +1,9 @@
-<script>
-  export let data;
-</script>
+<main class='flex flex-col items-center'>
+<h2 class='text-2xl underline'>Our Lists</h2>
 
-<ul class="p-4">
-  {#each data.lists as list}
-    <li>
-      <a href="/list/{list.uuid}">{list.name}</a>
-    </li>
-  {/each}
+<ul class='flex flex-col items-center'>
+  <li class='m-2'><a href="/lists/movies">Movies</a></li>
+  <li class='m-2'><a href="/lists/restaurants">Restaurants</a></li>
+  <li class='m-2'><a href="/lists/travel">Travel Spots</a></li>
 </ul>
-
-<form method="POST" action="?/newList">
-  <h3>New List</h3>
-  <label for="name">Name</label>
-  <input type="text" name="name" />
-  <button>Submit</button>
-</form>
+</main>
