@@ -3,7 +3,7 @@
 </script>
 
 {#each data.imgs as img}
-  <img src={`./build/client/images/${img}`} />
+  <img src={`./images/${img}`} />
   <!-- <p>{img}</p> -->
 {/each}
 
