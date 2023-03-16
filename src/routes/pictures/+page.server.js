@@ -3,7 +3,7 @@ import path from "path";
 import { redirect } from "@sveltejs/kit";
 
 export async function load() {
-  let dir = path.join(process.cwd(), "images");
+  let dir = path.join(process.cwd(), "build", "client", "images");
 
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
@@ -24,6 +24,8 @@ export const actions = {
       const data = Object.fromEntries(await request.formData());
       const filePath = path.join(
         process.cwd(),
+        "build",
+        "client",
         "images",
         `${crypto.randomUUID()}.${data.avatar.type.split("/")[1]}`
       );

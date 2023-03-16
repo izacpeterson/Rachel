@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [sveltekit()],
   server: {
     fs: {
-      allow: ["images"],
+      allow: ["images", "build/client/images"],
     },
   },
 });
