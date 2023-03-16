@@ -1,11 +1,13 @@
 <script>
-  import "../app.css";
-</script>
+    import "../app.css";
+  </script>
 
-<nav class="flex justify-between">
-  <a href="/">Home</a>
-  <a href="/lists">Lists</a>
-  <a href="/pictures">Pictures</a>
-  <a href="/dates">Important Dates</a>
-</nav>
+<header>
+  <nav class='flex justify-between px-4 py-2'>
+    <a href="/">Home</a>
+    <a href="/lists">Lists</a>
+    <a href="/pictures">Pictures</a>
+  </nav>
+</header>
+
 <slot />

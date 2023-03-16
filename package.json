@@ -1,26 +1,23 @@
 {
-  "name": "izacandrachel",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "start": "PORT=5000 BODY_SIZE_LIMIT=52428800 node build"
-  },
-  "devDependencies": {
-    "@sveltejs/adapter-auto": "^2.0.0",
-    "@sveltejs/adapter-node": "^1.2.2",
-    "@sveltejs/kit": "^1.5.0",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
-    "svelte": "^3.54.0",
-    "tailwindcss": "^3.2.7",
-    "vite": "^4.0.0"
-  },
-  "type": "module",
-  "dependencies": {
-    "dotenv": "^16.0.3",
-    "sqlite3": "^5.1.6"
-  }
+	"name": "rachel",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.5.0",
+		"autoprefixer": "^10.4.14",
+		"postcss": "^8.4.21",
+		"svelte": "^3.54.0",
+		"tailwindcss": "^3.2.7",
+		"vite": "^4.0.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"firebase": "^9.17.2"
+	}
 }
