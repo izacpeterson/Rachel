@@ -17,7 +17,7 @@
 
 <form action="" on:submit={uploadFile}>
   <input type="file" bind:files={file} multiple />
-  <button>Upload</button>
+  <button class='bg-primary'>Upload</button>
 </form>
 
 {#each images as image}

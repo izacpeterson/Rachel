@@ -9,6 +9,7 @@ import {
   getDocs,
   query,
   onSnapshot,
+  updateDoc,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -56,10 +57,30 @@ export async function getListItems(list) {
     let items = [];
 
     querySnapshot.forEach((doc) => {
-      items.push(doc.data());
+      let data = doc.data();
+      data.id = doc.id;
+      items.push(data);
     });
 
     resolve(items);
+  });
+}
+
+export async function updateItemStatus(list, item) {
+  return new Promise(async (resolve, reject) => {
+    console.log("UPDATE: ", list, item);
+    let newStatus;
+
+    if (item.status == "new") {
+      newStatus = "done";
+    } else {
+      newStatus = "new";
+    }
+    console.log(item);
+    const docRef = doc(db, list, item.id);
+
+    await updateDoc(docRef, { status: newStatus });
+    resolve(newStatus);
   });
 }
 
