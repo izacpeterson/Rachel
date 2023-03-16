@@ -23,7 +23,7 @@ export const actions = {
     try {
       const data = Object.fromEntries(await request.formData());
       const filePath = path.join(
-        // process.cwd(),
+        process.cwd(),
         "images",
         `${crypto.randomUUID()}.${data.avatar.type.split("/")[1]}`
       );
