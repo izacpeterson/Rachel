@@ -15,7 +15,7 @@
   });
 </script>
 
-<form action="" on:submit={uploadFile} class="flex">
+<form action="" on:submit={uploadFile} class="flex input-group">
   <input
     type="file"
     bind:files={file}
