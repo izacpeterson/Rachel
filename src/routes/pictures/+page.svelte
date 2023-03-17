@@ -15,9 +15,14 @@
   });
 </script>
 
-<form action="" on:submit={uploadFile}>
-  <input type="file" bind:files={file} multiple />
-  <button class='bg-primary'>Upload</button>
+<form action="" on:submit={uploadFile} class="flex">
+  <input
+    type="file"
+    bind:files={file}
+    multiple
+    class="file-input file-input-bordered file-input-primary"
+  />
+  <button class="btn btn-primary">Upload</button>
 </form>
 
 {#each images as image}
