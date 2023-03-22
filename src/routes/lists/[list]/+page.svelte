@@ -17,13 +17,19 @@
 
 <ul>
   {#each items as item}
-    <li class="m-2">
-      {item.item}
+    <li class="mx-24 my-4 flex justify-between items-center">
+      <p>{item.item}</p>
       <button
         on:click={fb.updateItemStatus(list, item).then((status) => {
           item.status = status;
         })}
-        class="btn btn-primary">{item.status}</button
+        class={item.status == "done"
+          ? "bg-white text-primary border border-primary rounded p-2 transition-all duration-200 w-1/5"
+          : "bg-primary text-white p-2 transition-all border border-primary duration-200 w-1/5 shadow-lg rounded"}
+      >
+        <span class="material-symbols-outlined flex items-center justify-center"
+          >{item.status == "done" ? "restart_alt" : "check"}</span
+        ></button
       >
     </li>
   {/each}
@@ -31,11 +37,6 @@
 
 <form on:submit|preventDefault={addListItem} class="p-4 flex flex-col">
   <span>Add new</span>
-  <input
-    type="text"
-    bind:value={item}
-    placeholder={items[0].item}
-    class="input input-bordered input-primary"
-  />
-  <button class="btn btn-primary">Add</button>
+  <input type="text" bind:value={item} class="bg-gray-200 p-2" />
+  <button class="bg-primary p-2">Add</button>
 </form>
