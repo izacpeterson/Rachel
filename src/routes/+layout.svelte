@@ -5,15 +5,22 @@
   let selected = 0;
 </script>
 
-<div data-theme={options[selected]} class="h-screen">
+<div data-theme={options[selected]} class="h-screen flex flex-col justify-between">
   <!-- <input type="number" bind:value={selected} /> -->
-  <header>
-    <nav class="flex justify-between px-4 py-2">
-      <a href="/">Home</a>
-      <a href="/lists">Lists</a>
-      <a href="/pictures">Pictures</a>
-    </nav>
-  </header>
 
   <slot />
+
+  <header class="shadow-md sticky bottom-0 shadow-[]">
+    <nav class="flex justify-between items-center px-4 py-2 bg-primary  text-white">
+      <a href="/"><span class="material-symbols-outlined"> home </span></a>
+      <a href="/lists"><span class="material-symbols-outlined"> list </span></a>
+      <a href="/pictures"><span class="material-symbols-outlined"> photo_camera </span></a>
+    </nav>
+  </header>
 </div>
+
+<style>
+  header {
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.25);
+  }
+</style>

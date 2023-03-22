@@ -2,7 +2,7 @@
   import * as fb from "../lib/firebase";
 </script>
 
-<main class="flex flex-col items-center justify-center h-screen">
+<main class="flex flex-col items-center justify-center">
   <h1 class="text-4xl">Rachel and Izac</h1>
   <p>Our Journey</p>
 </main>
