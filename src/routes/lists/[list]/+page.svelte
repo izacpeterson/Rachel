@@ -24,8 +24,8 @@
           item.status = status;
         })}
         class={item.status == "done"
-          ? "bg-white text-primary border border-primary rounded p-2 transition-all duration-200 w-1/5"
-          : "bg-primary text-white p-2 transition-all border border-primary duration-200 w-1/5 shadow-lg rounded"}
+          ? "bg-white text-primary border border-primary rounded p-2 transition-all duration-200"
+          : "bg-primary text-white p-2 transition-all border border-primary duration-200 shadow-lg rounded"}
       >
         <span class="material-symbols-outlined flex items-center justify-center"
           >{item.status == "done" ? "restart_alt" : "check"}</span
