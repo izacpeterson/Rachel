@@ -1,27 +1,9 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  doc,
-  setDoc,
-  getDocs,
-  query,
-  onSnapshot,
-  updateDoc,
-} from "firebase/firestore";
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-  listAll,
-  getDownloadURL,
-} from "firebase/storage";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore, collection, addDoc, doc, setDoc, getDocs, query, onSnapshot, updateDoc } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { writable } from "svelte/store";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyD8HgnXCdZ0bDRbJ4l_8DIrRkvREre5--c",
   authDomain: "rachel-ca3c0.firebaseapp.com",
@@ -33,9 +15,12 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
+export const auth = getAuth(app);
+
+export const currentUser = writable(null);
 
 export async function addListItem(list, item) {
   await setDoc(doc(db, "lists", list), {
@@ -132,4 +117,50 @@ export async function getAllFiles() {
   });
 }
 
-export { db };
+export async function login(email, password) {
+  return new Promise((resolve, reject) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log("logged in");
+
+        resolve(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        reject(errorMessage);
+      });
+  });
+}
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+    currentUser.set(user);
+    console.log("user logged in");
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+
+export async function logout() {
+  return new Promise((resolve, reject) => {
+    signOut(auth)
+      .then(() => {
+        console.log("logged out");
+        currentUser.set(null);
+        resolve("done");
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
