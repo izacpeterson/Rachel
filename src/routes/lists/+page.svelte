@@ -5,6 +5,6 @@
     <li class="m-2"><a href="/lists/movies">Movies</a></li>
     <li class="m-2"><a href="/lists/restaurants">Restaurants</a></li>
     <li class="m-2"><a href="/lists/travel">Travel Spots</a></li>
-    <!-- <li class="m-2"><a href="/lists/test">Test</a></li> -->
+    <li class="m-2"><a href="/lists/test">Test</a></li>
   </ul>
 </main>
