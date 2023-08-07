@@ -31,7 +31,7 @@
     interval = setInterval(() => {
       updateTimeElapsed();
       tick(); // trigger Svelte update
-    }, 1000);
+    }, 100);
   });
 
   onDestroy(() => {

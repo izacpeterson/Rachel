@@ -10,13 +10,13 @@
 
   <slot />
 
-  <!-- <header class="shadow-md fixed bottom-0 shadow-[] w-full">
-    <nav class="flex justify-between items-center px-4 py-2 bg-primary  text-white">
+  <header class="shadow-md fixed bottom-0 shadow-[] w-full">
+    <nav class="flex justify-between items-center px-4 py-2 bg-primary text-white">
       <a href="/"><span class="material-symbols-outlined"> home </span></a>
       <a href="/lists"><span class="material-symbols-outlined"> list </span></a>
       <a href="/pictures"><span class="material-symbols-outlined"> photo_camera </span></a>
     </nav>
-  </header> -->
+  </header>
 </div>
 
 <style>
