@@ -1,7 +1,7 @@
 <script>
   import { onMount, onDestroy } from "svelte";
 
-  let targetDate = new Date("2023-10-14T12:00:00"); // Replace this with your target date and time
+  let targetDate = new Date("2023-10-16T11:00:00"); // Replace this with your target date and time
   let timeRemaining = targetDate.getTime() - Date.now();
 
   function updateCountdown() {
