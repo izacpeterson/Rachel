@@ -40,7 +40,8 @@
 </script>
 
 <div class="flex flex-col items-center justify-center p-6 bg-white rounded-lg">
-  <h2 class="text-2xl font-bold mb-4">Time Married</h2>
+  <h2 class="text-2xl font-bold">Time Married</h2>
+  <div class=" mb-4">October 16th 2023, 11:00am</div>
   <div class="flex space-x-6">
     <div class="text-center">
       <p class="text-3xl font-semibold">{timeElapsed.years}</p>
