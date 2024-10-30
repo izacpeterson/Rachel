@@ -24,6 +24,8 @@
   </AuthChecker>
 </div>
 
+<a href="/lists" class="fixed bottom-0 left-0 w-24 h-24"></a>
+
 <style>
   header {
     box-shadow: 0 0 20px rgb(0, 0, 0, 0.25);
