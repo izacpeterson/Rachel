@@ -39,11 +39,28 @@
   });
 </script>
 
-<div class="flex">
-  <p class="font-bold">Time Together:&nbsp;</p>
-  <p>{timeElapsed.years} year&nbsp;</p>
-  <p>{timeElapsed.days} days,&nbsp;</p>
-  <p>{timeElapsed.hours} hours,&nbsp;</p>
-  <p>{timeElapsed.minutes} minutes,&nbsp;</p>
-  <p>{timeElapsed.seconds} seconds,&nbsp;</p>
+<div class="flex flex-col items-center justify-center p-6 bg-white rounded-lg">
+  <h2 class="text-2xl font-bold mb-4">Time Together</h2>
+  <div class="flex space-x-6">
+    <div class="text-center">
+      <p class="text-3xl font-semibold">{timeElapsed.years}</p>
+      <p class="text-gray-500">Years</p>
+    </div>
+    <div class="text-center">
+      <p class="text-3xl font-semibold">{timeElapsed.days}</p>
+      <p class="text-gray-500">Days</p>
+    </div>
+    <div class="text-center">
+      <p class="text-3xl font-semibold">{timeElapsed.hours}</p>
+      <p class="text-gray-500">Hours</p>
+    </div>
+    <div class="text-center">
+      <p class="text-3xl font-semibold">{timeElapsed.minutes}</p>
+      <p class="text-gray-500">Minutes</p>
+    </div>
+    <div class="text-center">
+      <p class="text-3xl font-semibold">{timeElapsed.seconds}</p>
+      <p class="text-gray-500">Seconds</p>
+    </div>
+  </div>
 </div>
