@@ -5,7 +5,7 @@
   let interval;
 
   // calculate time difference
-  const startDateTime = new Date("January 13, 2023 18:00:00").getTime();
+  const startDateTime = new Date("October 16, 2023 11:00:00").getTime();
 
   let timeElapsed = {
     years: 0,
@@ -40,7 +40,7 @@
 </script>
 
 <div class="flex">
-  <p class="font-bold">Time Together:&nbsp;</p>
+  <p class="font-bold">Time Married:&nbsp;</p>
   <p>{timeElapsed.years} year&nbsp;</p>
   <p>{timeElapsed.days} days,&nbsp;</p>
   <p>{timeElapsed.hours} hours,&nbsp;</p>
